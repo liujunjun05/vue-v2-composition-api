@@ -1,12 +1,30 @@
 <template>
   <div id="app">
+    <h3>{{ state.title }}</h3>
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/list">List</router-link> |
+      <router-link to="/api">composition-api</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import { reactive } from '@vue/composition-api'
+
+export default {
+  setup () {
+    const state = reactive({
+      title: 'Hello world'
+    })
+    return {
+      state
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

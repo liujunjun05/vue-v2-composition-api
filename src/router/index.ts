@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
+import VueCompositionApi from '../views/VueCompositionApi.vue'
+import List from '../views/List.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +11,16 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/api',
+    name: 'api',
+    component: VueCompositionApi
+  },
+  {
+    path: '/list',
+    name: 'list',
+    component: List
   },
   {
     path: '/about',
